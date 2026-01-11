@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.fieldLabel {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.fieldLocation {
+  width: 100%;
+  height: 56px;
+  padding: 18px 20px 18px 48px;
+
+  border-radius: 12px;
+  background: var(--inputs);
+  border: none;
+  outline: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  fill: var(--gray);
+  transition: stroke 0.2s ease;
+}
+
+.inputWrapper:focus-within .icon {
+  stroke: var(--main);
+}
+
+.fieldLocation:hover {
+  background-color: #f2f2f2;
+}
+
+.fieldLocation::placeholder {
+  color: var(--gray);
+  opacity: 1;
+  transition: color 0.2s ease;
+}
+
+.fieldLocation:focus::placeholder {
+  color: var(--main);
+}
+
+.chipLabel {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.filtersChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filtersLine {
+  height: 1px;
+  background-color: var(--gray-light);
+  margin: 12px 0 16px 0;
+  width: 100%;
+}
+
+.searchButton {
+  width: 166px;
+  height: 56px;
+  border-radius: 200px;
+  background: var(--button);
+  cursor: pointer;
+  padding: 0;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+
+  border: none;
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.3s ease;
+  margin-top: 40px;
+}
+
+.searchButton:hover {
+  background: var(--button-hover);
+}

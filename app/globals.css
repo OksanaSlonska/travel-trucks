@@ -1,42 +1,99 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --main: #101828;
+  --text: #475467;
+  --white: #ffffff;
+  --inputs: #f7f7f7;
+  --badges: #f2f4f7;
+  --gray: #6c717b;
+  --gray-light: #dadde1;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --rating: #ffc531;
+  --text-light: #f7f7f7;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --input-text: #101828;
+  --input-placeholder: #6c717b;
+  --input-icon: #6c717b;
+  --input-icon-active: #101828;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-family: "Inter", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--main);
+  background-color: var(--white);
+  font-size: 16px;
+}
+
+.app-body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--geistSans), sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+svg use[href*="icon-lucide_microwave"],
+svg use[href*="icon-water"],
+svg use[href*="icon-gas"] {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 2px !important;
+}
+
+.filter-chip-card {
+  width: 112px;
+  height: 96px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--main);
+  background-color: transparent;
+
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.filter-chip-card:hover {
+  background-color: rgba(228, 72, 72, 0.08);
+}
+
+.filter-chip-card:not(.active):hover {
+  border-color: var(--button);
+}
+
+.filter-chip-card.active {
+  border-color: var(--button);
+  background-color: transparent;
+  color: var(--main);
 }

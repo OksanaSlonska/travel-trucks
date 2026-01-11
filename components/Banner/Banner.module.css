@@ -1,0 +1,54 @@
+.banner {
+  width: 100%;
+  min-height: 696px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/image/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 260px 0px 260px 64px;
+}
+
+.title {
+  color: var(--text-light);
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: var(--text-light);
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.button {
+  background-color: var(--button);
+  color: var(--white);
+  border-radius: 200px;
+  width: 173px;
+  height: 56px;
+  padding: 16px 48px;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--button-hover);
+}

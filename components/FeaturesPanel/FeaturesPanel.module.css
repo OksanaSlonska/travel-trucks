@@ -1,0 +1,53 @@
+.featuresContainer {
+  width: 100%;
+  height: 588px;
+
+  padding: 44px 52px;
+  border-radius: 10px;
+
+  background-color: var(--inputs);
+}
+
+.chipsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 100px;
+}
+
+.detailsTitle {
+  margin-bottom: 24px;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--gray-light);
+  margin: 24px 0;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 14px;
+  column-gap: 40px;
+}
+
+.details p:nth-child(even) {
+  text-align: right;
+}
+
+.details p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.details strong {
+  font-weight: 500;
+}

@@ -1,0 +1,17 @@
+.container {
+  padding: 48px 64px;
+  box-sizing: border-box;
+}
+
+.catalogPage {
+  display: flex;
+  gap: 64px;
+}
+
+.filters {
+  flex: 0 0 420px;
+}
+
+.cards {
+  flex: 1;
+}

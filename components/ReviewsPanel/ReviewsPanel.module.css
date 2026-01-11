@@ -1,0 +1,60 @@
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 631px;
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--badges);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  font-size: 24px;
+  color: var(--button);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  fill: var(--gray-light);
+}
+
+.starActive {
+  fill: var(--rating);
+}
+
+.comment {
+  color: var(--text);
+  line-height: 1.5;
+}

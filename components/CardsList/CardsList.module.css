@@ -1,0 +1,79 @@
+.cardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: var(--font-family);
+}
+
+.cardsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cardsGrid li {
+  flex: 0 1 250px;
+}
+
+.loadMore {
+  padding: 10px 20px;
+  align-self: center;
+  background-color: var(--button);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.loadMore:hover {
+  background-color: var(--button-hover);
+}
+
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.loadMoreBtn {
+  border: 1px solid #475467;
+  background: transparent;
+  padding: 16px 32px;
+  border-radius: 200px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.loadMoreBtn:hover {
+  border-color: #e44848;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  text-align: center;
+  width: 100%;
+}
+
+.emptyTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--main);
+  margin-bottom: 12px;
+}
+
+.emptyText {
+  font-size: 16px;
+  color: #667085;
+  max-width: 400px;
+  line-height: 1.5;
+}

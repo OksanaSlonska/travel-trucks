@@ -1,0 +1,144 @@
+.card {
+  display: flex;
+  gap: 24px;
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 888px;
+  height: 368px;
+  font-family: var(--font-family);
+  color: var(--text);
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.thumb {
+  width: 292px;
+  height: 320px;
+  object-fit: cover;
+  object-position: 65% center;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.name,
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--main);
+  margin: 0;
+}
+
+.favorites {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+}
+
+.favorites:focus {
+  outline: none;
+}
+
+.iconWrapper {
+  display: inline-block;
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.favorites:hover .iconWrapper,
+.favorites:focus-visible .iconWrapper {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 2px rgba(228, 72, 72, 0.8));
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.chipsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.reviews,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reviews svg,
+.location svg {
+  width: 16px;
+  height: 16px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+  margin-top: 8px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.showMore {
+  margin-top: auto;
+  align-self: flex-start;
+
+  border-radius: 200px;
+  padding: 16px 60px;
+  height: 56px;
+
+  background-color: var(--button);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.showMore:hover {
+  background-color: var(--button-hover);
+}

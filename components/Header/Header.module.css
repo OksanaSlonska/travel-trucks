@@ -1,0 +1,40 @@
+.header {
+  padding: 20px 64px;
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: 450px;
+}
+
+.navLink {
+  margin-left: 32px;
+  font-size: 16px;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink.active {
+  color: var(--button);
+}
+
+.navLink:first-child {
+  margin-left: 0;
+}
+
+.navLink:hover {
+  color: var(--button);
+}
+
+.logo img {
+  display: block;
+}
