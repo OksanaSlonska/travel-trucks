@@ -61,6 +61,8 @@ svg use[href*="icon-gas"] {
   stroke-width: 2px !important;
 }
 
+/* чіпи */
+
 .filter-chip-card {
   width: 112px;
   height: 96px;
@@ -96,4 +98,33 @@ svg use[href*="icon-gas"] {
   border-color: var(--button);
   background-color: transparent;
   color: var(--main);
+}
+
+/* календар */
+
+body .react-datepicker {
+  border: 1px solid #dadde1 !important;
+  border-radius: 12px !important;
+  font-family: inherit !important;
+}
+
+body .react-datepicker__header {
+  background-color: #fff !important;
+  border-bottom: none !important;
+}
+
+body .react-datepicker__day--selected,
+body .react-datepicker__day--keyboard-selected {
+  background-color: #475467 !important; /* Тёмно-серый из макета */
+  color: #fff !important;
+  border-radius: 50% !important;
+}
+
+body .react-datepicker__day:hover {
+  background-color: #f2f4f7 !important;
+  border-radius: 50% !important;
+}
+
+body .react-datepicker__day-name {
+  color: #9ca3af !important;
 }

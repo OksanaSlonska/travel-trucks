@@ -4,6 +4,7 @@ import { useState } from "react";
 import {
   vehicleEquipmentFilters,
   vehicleTypeFilters,
+  transmissionFilters,
 } from "@/constants/filterOptions";
 import { useCatalogStore } from "@/lib/stores/useCatalogStore";
 import ChipList from "../ChipList/ChipList";
@@ -11,8 +12,15 @@ import styles from "./FiltersForm.module.css";
 import Icon from "../Icon/Icon";
 
 export default function FiltersForm() {
-  const { filters, setLocation, setForm, fetchCampers, toggleFeature } =
-    useCatalogStore();
+  const {
+    filters,
+    setLocation,
+    setForm,
+    fetchCampers,
+    toggleFeature,
+    setTransmission,
+  } = useCatalogStore();
+
   const [locationInput, setLocationInput] = useState(filters.location || "");
 
   const handleSearch = () => {
@@ -23,7 +31,7 @@ export default function FiltersForm() {
 
   return (
     <div className={styles.container}>
-      {/* Location */}
+      {/* Секція локації */}
       <label className={styles.fieldLabel}>Location</label>
       <div className={styles.section}>
         <div className={styles.inputWrapper}>
@@ -37,27 +45,39 @@ export default function FiltersForm() {
             type="text"
             value={locationInput}
             onChange={(e) => setLocationInput(e.target.value)}
-            placeholder="Ukraine, Odesa"
+            placeholder="Country, City"
             className={styles.fieldLocation}
           />
         </div>
       </div>
-      <label className={styles.fieldLabel}>Filters</label>
-      {/* Vehicle Equipment */}
 
+      <label className={styles.fieldLabel}>Filters</label>
+
+      {/* Секція обладнання + Трансмісія в одному ряду */}
       <div className={styles.section}>
         <label className={styles.chipLabel}>Vehicle equipment</label>
         <div className={styles.filtersLine}></div>
         <ChipList
-          chips={vehicleEquipmentFilters}
-          activeKeys={filters.features}
-          onClick={(key) => toggleFeature(key as any)}
+          chips={[...vehicleEquipmentFilters, ...transmissionFilters]}
+          activeKeys={[
+            ...filters.features,
+            ...(filters.transmission ? [filters.transmission] : []),
+          ]}
+          onClick={(key) => {
+            if (key === "automatic") {
+              setTransmission(
+                filters.transmission === "automatic" ? null : "automatic"
+              );
+            } else {
+              toggleFeature(key as any);
+            }
+          }}
           className={styles.filtersChips}
           chipClassName="filter-chip-card"
         />
       </div>
 
-      {/* Vehicle Type */}
+      {/* Секція типу кузова */}
       <div className={styles.section}>
         <label className={styles.chipLabel}>Vehicle type</label>
         <div className={styles.filtersLine}></div>
@@ -70,7 +90,7 @@ export default function FiltersForm() {
         />
       </div>
 
-      {/* Search Button */}
+      {/* Кнопка пошуку */}
       <button className={styles.searchButton} onClick={handleSearch}>
         Search
       </button>
