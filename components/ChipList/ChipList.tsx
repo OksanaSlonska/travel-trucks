@@ -1,42 +1,39 @@
 "use client";
 
 import Chip from "../Chip/Chip";
+import styles from "./ChipList.module.css";
 
-interface ChipListProps {
+type ChipListProps = {
   chips: { key: string; label: string; icon?: string }[];
-  activeKey?: string | null;
   activeKeys?: string[];
+  activeKey?: string | null;
   onClick: (key: string) => void;
   className?: string;
   chipClassName?: string;
-}
+};
 
 export default function ChipList({
   chips,
-  activeKey,
-  activeKeys,
+  activeKeys = [],
+  activeKey = null,
   onClick,
-  className,
-  chipClassName,
+  className = "",
+  chipClassName = "",
 }: ChipListProps) {
   return (
-    <div className={className}>
-      {chips.map((item) => {
-        const isActive = activeKeys
-          ? activeKeys.includes(item.key)
-          : activeKey === item.key;
-
-        return (
+    <ul className={`${styles.list} ${className}`}>
+      {chips.map((chip) => (
+        <li key={chip.key}>
           <Chip
-            key={item.key}
-            label={item.label}
-            iconName={item.icon}
-            active={isActive}
-            onClick={() => onClick(item.key)}
+            as="button" // Для фільтрів це завжди інтерактивна кнопка
+            label={chip.label}
+            iconName={chip.icon}
+            active={activeKey === chip.key || activeKeys.includes(chip.key)}
+            onClick={() => onClick(chip.key)}
             className={chipClassName}
           />
-        );
-      })}
-    </div>
+        </li>
+      ))}
+    </ul>
   );
 }

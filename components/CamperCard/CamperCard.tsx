@@ -93,13 +93,18 @@ export default function CamperCard({
 
         {/* Чіпси */}
         {activeOptions.length > 0 && (
-          <div className={styles.chipsWrapper}>
-            {activeOptions.map((opt) => (
-              <Chip key={opt.key} label={opt.label} iconName={opt.icon} />
+          <ul className={styles.chipsWrapper}>
+            {activeOptions.slice(0, 6).map((opt) => (
+              <Chip
+                key={opt.key}
+                label={opt.label}
+                iconName={opt.icon}
+                as="li"
+                className={styles.detailsChip}
+              />
             ))}
-          </div>
+          </ul>
         )}
-
         <Link href={`/catalog/${id}`} className={styles.showMore}>
           Show more
         </Link>

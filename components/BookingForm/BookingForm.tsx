@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import DatePicker from "react-datepicker";
+import toast from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./BookingForm.module.css";
 
@@ -18,7 +19,6 @@ async function bookCamper(data: FormData) {
 }
 
 export default function BookingForm({ camperId }: Props) {
-  const [notification, setNotification] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const handleSubmit = async (formData: FormData) => {
@@ -30,12 +30,13 @@ export default function BookingForm({ camperId }: Props) {
     const res = await bookCamper(formData);
 
     if (res.success) {
-      setNotification("✅ Your booking was successful!");
-    } else {
-      setNotification("❌ Something went wrong. Please try again.");
-    }
+      toast.success("✅ Your booking was successful!");
 
-    setTimeout(() => setNotification(null), 3000);
+      // Додатково можна очистити дату та форму
+      setSelectedDate(null);
+    } else {
+      toast.error("❌ Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -44,10 +45,6 @@ export default function BookingForm({ camperId }: Props) {
       <p className={styles.formSubtitle}>
         Stay connected! We are always ready to help you.
       </p>
-
-      {notification && (
-        <div className={styles.notification}>{notification}</div>
-      )}
 
       <input
         className={styles.formInput}

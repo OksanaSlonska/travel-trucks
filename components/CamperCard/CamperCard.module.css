@@ -6,7 +6,7 @@
   padding: 24px;
   width: 100%;
   max-width: 888px;
-  height: 368px;
+  min-height: 368px;
   font-family: var(--font-family);
   color: var(--text);
   list-style: none;
@@ -94,8 +94,20 @@
 .chipsWrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 4px;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 24px;
+}
+
+.chipsWrapper .detailsChip {
+  background-color: #f2f4f7 !important;
+  border-radius: 100px !important;
+  padding: 12px 18px !important;
+  border: none !important;
+  color: #101828;
+  cursor: default;
 }
 
 .reviews,

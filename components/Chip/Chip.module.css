@@ -3,18 +3,20 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-
-  padding: 12px 18px;
-  border-radius: 100px;
-
-  background-color: var(--badges);
-  color: var(--main);
-
+  transition: all 0.2s ease;
   font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
+  box-sizing: border-box;
+}
 
-  border: none;
-  cursor: default;
+/* Стиль іконки */
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: #101828;
+  flex-shrink: 0;
+}
+
+/* Активний стан тільки для кнопок у фільтрах */
+.chip.active {
+  border-color: #e44848 !important;
 }

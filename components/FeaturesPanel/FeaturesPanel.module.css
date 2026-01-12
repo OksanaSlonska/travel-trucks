@@ -12,8 +12,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 44px;
+}
 
-  margin-bottom: 100px;
+.detailsChip {
+  background-color: #f2f4f7 !important;
+  border-radius: 100px !important;
+  padding: 12px 18px !important;
+  border: none !important;
+  color: #101828;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .detailsTitle {

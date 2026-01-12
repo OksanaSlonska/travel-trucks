@@ -1,73 +1,71 @@
-# 🚐 TravelTrucks — Платформа для оренди кемперів
+# 🚐 TravelTrucks — Camper Rental Platform
 
-**TravelTrucks** — це сучасний веб-додаток для компанії, що займається орендою кемперів. Проєкт дозволяє користувачам зручно знаходити транспортні засоби для подорожей, фільтрувати їх за технічними характеристиками, переглядати відгуки та здійснювати бронювання.
+**TravelTrucks** is a modern web application for a camper rental company. The project allows users to search for campers, filter them by technical specifications, view reviews, and book a vehicle.
 
----
+## 🔗 Live Demo
 
-## 🔗 Жива сторінка (Live Demo)
+👉 [Open project on Vercel](https://travel-trucks-lac-delta.vercel.app/)
 
-👉 [Відкрити проєкт на Vercel](https://travel-trucks-lac-delta.vercel.app/)
+## ✨ Key Features
 
----
+- **🔍 Advanced Filtering System**: Users can search for campers by location and filter results by equipment (AC, Kitchen, TV, etc.) or vehicle type. All filtering logic is handled server-side to ensure accuracy.
+- **📄 Detailed Camper Profiles**: Each camper has a dedicated page featuring a high-quality gallery, full technical specifications, and interactive tabs for Features and Reviews.
+- **❤️ Favorites Management**: Save preferred campers to a personalized list. The selection is persistent and remains saved even after page reloads via Zustand middleware.
+- **📅 Integrated Booking**: A user-friendly booking form with an interactive calendar.
+- **🔔 Professional Notifications**: Real-time feedback using **React Hot Toast**, providing users with clear success or error messages after booking.
+- **📦 Efficient Data Loading**: Implemented "Load More" pagination to ensure fast loading times and a smooth browsing experience.
 
-## ✨ Основні функції
-
-- **🏠 Домашня сторінка**: Містить привабливий банер з основним закликом до дії (кнопка "View Now").
-- **🔍 Каталог з розумною фільтрацією**:
-  - Пошук за локацією (країна, місто).
-  - Фільтрація за обладнанням (AC, Kitchen, TV, Bathroom тощо).
-  - Фільтрація за типом кузова (Van, Fully Integrated, Alcove).
-  - _Примітка:_ Уся фільтрація виконується на стороні бекенду.
-- **📄 Детальна сторінка кемпера**: Повний опис, галерея фотографій, вкладки з характеристиками (Features) та відгуками (Reviews).
-- **❤️ Обране (Favorites)**: Можливість додавати кемпери до списку обраних. Дані зберігаються навіть після оновлення сторінки (Persistence).
-- **📅 Форма бронювання**: Інтерактивна форма з календарем. Після успішного відправлення користувач отримує сповіщення.
-- **📦 Пагінація**: Реалізовано довантаження карток за допомогою кнопки "Load More".
-
----
-
-## 💻 Технологічний стек
+## 💻 Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/) (з використанням persist middleware для збереження стану)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
 - **Styling**: CSS Modules
-- **HTTP Client**: Axios для взаємодії з MockAPI
-- **UI Components**: React Datepicker (стилізований під макет), SVG Sprite для іконок
+- **UI Components**: React Datepicker, React Hot Toast
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone [https://github.com/OksanaSlonska/travel-trucks]
+   ```
+
+2. **Navigate to the project folder:**
+
+   ```bash
+   cd travel-trucks
+   ```
+
+3. **Install dependencies:**
+
+```bash
+npm install
+```
+
+4. **Launch the development server:**
+
+```bash
+npm run dev
+```
+
+5. **Open in browser** `http://localhost:3000`
 
 ---
 
-## 🛠️ Інструкція з установки та запуску
+## 📁 Project Structure
 
-1.  **Клонувати репозиторій:**
-    ```bash
-    git clone [https://github.com/OksanaSlonska/travel-trucks]
-    ```
-2.  **Перейти в папку проєкту:**
-    ```bash
-    cd travel-trucks
-    ```
-3.  **Встановити залежності:**
-    ```bash
-    npm install
-    ```
-4.  **Запустити проєкт у режимі розробки:**
-    ```bash
-    npm run dev
-    ```
-5.  **Відкрити в браузері:** `http://localhost:3000`
+- `app/` — Routing and core application pages.
+- `components/` — Reusable UI components (Cards, Filters, Loader, etc.).
+- `lib/stores/` — Global state management logic (Zustand).
+- `constants/` — Configuration data for filters and icons.
+- `types/` — TypeScript interfaces and definitions.
 
 ---
 
-## 📁 Структура проєкту
-
-- `app/` — маршрутизація та основні сторінки додатка.
-- `components/` — багаторазові UI компоненти (Cards, Filters, Loader тощо).
-- `lib/stores/` — логіка управління глобальним станом (Zustand).
-- `constants/` — конфігураційні дані для фільтрів та іконок.
-- `types/` — опис інтерфейсів TypeScript.
-
----
-
-## 👤 Автор
+## 👤 Author
 
 **Oksana Slonska**
+
+```
+
+```

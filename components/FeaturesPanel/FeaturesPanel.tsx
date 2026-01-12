@@ -10,13 +10,21 @@ export default function FeaturesPanel({ camper }: Props) {
   return (
     <div className={styles.featuresContainer}>
       {/* Chips */}
-      <div className={styles.chipsWrapper}>
+      <ul className={styles.chipsWrapper}>
         {camperOptions.map((opt) =>
           camper[opt.key] ? (
-            <Chip key={opt.key} label={opt.label} iconName={opt.icon} />
+            <Chip
+              key={opt.key}
+              label={opt.label}
+              iconName={opt.icon}
+              as="li"
+              className={styles.detailsChip}
+            />
           ) : null
         )}
-      </div>
+      </ul>
+
+      <h3 className={styles.detailsTitle}>Vehicle details</h3>
 
       {/* Details */}
       <h3 className={styles.detailsTitle}>Vehicle details</h3>

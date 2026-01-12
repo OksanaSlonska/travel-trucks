@@ -28,18 +28,6 @@
   margin-bottom: 16px;
 }
 
-.notification {
-  padding: 12px 16px;
-  background-color: #e0f8e9;
-  border: 1px solid #28a745;
-  border-radius: 8px;
-  color: #101828;
-  font-weight: 600;
-  margin-bottom: 16px;
-  text-align: center;
-  animation: fadeInOut 3s forwards;
-}
-
 @keyframes fadeInOut {
   0% {
     opacity: 0;

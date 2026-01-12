@@ -51,6 +51,15 @@
   transition: stroke 0.2s ease;
 }
 
+:global(.filter-chip-card) {
+  width: 112px;
+  height: 96px;
+  flex-direction: column;
+  border-radius: 12px !important;
+  background-color: transparent;
+  border: 1px solid #dadde1;
+}
+
 .inputWrapper:focus-within .icon {
   stroke: var(--main);
 }

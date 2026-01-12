@@ -1,40 +1,47 @@
 .header {
-  padding: 20px 64px;
-  background-color: var(--white);
+  width: 100%;
+  padding: 24px 0; /* Вертикальні падінги за макетом */
+  background-color: #ffffff; /* Пряме вказання кольору надійніше */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Щоб хедер завжди був зверху */
+  top: 0;
+  z-index: 1000;
 }
 
 .container {
-  display: flex;
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* Навігація */
 .nav {
   display: flex;
   align-items: center;
-  margin-left: 450px;
+  gap: 32px;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navLink {
-  margin-left: 32px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
   font-size: 16px;
-  color: var(--text-main);
+  line-height: 1.5;
+  color: #101828;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .navLink.active {
-  color: var(--button);
+  color: #e44848;
 }
 
-.navLink:first-child {
-  margin-left: 0;
-}
-
-.navLink:hover {
-  color: var(--button);
-}
-
-.logo img {
-  display: block;
+.logo {
+  z-index: 10;
 }

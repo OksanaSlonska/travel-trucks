@@ -24,7 +24,7 @@ type CatalogState = {
   toggleFeature: (feature: Feature) => void;
   setTransmission: (t: "automatic" | null) => void;
 
-  fetchCampers: (reset?: boolean) => Promise<void>;
+  fetchCampers: (reset?: boolean, locationOverride?: string) => Promise<void>;
   loadMore: () => Promise<void>;
 };
 
@@ -61,10 +61,13 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     set((state) => ({ filters: { ...state.filters, transmission: t } })),
 
   // Основна функція завантаження
-  fetchCampers: async (reset = false) => {
+  fetchCampers: async (reset = false, locationOverride?: string) => {
     const { filters, campers, limit, page } = get();
 
     const currentPage = reset ? 1 : page;
+
+    const finalLocation =
+      locationOverride !== undefined ? locationOverride : filters.location;
 
     set({
       isLoading: true,
@@ -74,7 +77,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     try {
       const data = await fetchCampersApi({
-        location: filters.location || undefined,
+        location: finalLocation.trim() || undefined,
+
         form: filters.form || undefined,
         transmission: filters.transmission || undefined,
 

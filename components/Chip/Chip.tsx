@@ -5,10 +5,9 @@ type ChipProps = {
   label: string;
   iconName?: string;
   active?: boolean;
-  color?: string;
-
   onClick?: () => void;
   className?: string;
+  as?: "button" | "li" | "div";
 };
 
 export default function Chip({
@@ -17,14 +16,19 @@ export default function Chip({
   active,
   onClick,
   className = "",
+  as: Component = "div",
 }: ChipProps) {
-  const finalClassName = className
-    ? `${className} ${active ? "active" : ""}`
-    : styles.chip;
+  const finalClassName =
+    `${styles.chip} ${active ? styles.active : ""} ${className}`.trim();
+
   return (
-    <button type="button" onClick={onClick} className={finalClassName}>
-      {iconName && <Icon name={iconName} className="icon" />}
-      {label}
-    </button>
+    <Component
+      onClick={onClick}
+      className={finalClassName}
+      {...(Component === "button" ? { type: "button" } : {})}
+    >
+      {iconName && <Icon name={iconName} className={styles.icon} />}
+      <span>{label}</span>
+    </Component>
   );
 }

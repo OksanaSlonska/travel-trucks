@@ -115,7 +115,7 @@ body .react-datepicker__header {
 
 body .react-datepicker__day--selected,
 body .react-datepicker__day--keyboard-selected {
-  background-color: #475467 !important; /* Тёмно-серый из макета */
+  background-color: #475467 !important;
   color: #fff !important;
   border-radius: 50% !important;
 }
@@ -127,4 +127,15 @@ body .react-datepicker__day:hover {
 
 body .react-datepicker__day-name {
   color: #9ca3af !important;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: "Inter", sans-serif !important;
+}
+
+header {
+  background-color: #ffffff !important;
 }

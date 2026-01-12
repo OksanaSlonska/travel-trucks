@@ -24,9 +24,10 @@ export default function FiltersForm() {
   const [locationInput, setLocationInput] = useState(filters.location || "");
 
   const handleSearch = () => {
-    setLocation(locationInput);
-    fetchCampers(true);
-    setLocationInput("");
+    const trimmedLocation = locationInput.trim();
+    setLocation(trimmedLocation);
+    setLocationInput(trimmedLocation);
+    fetchCampers(true, trimmedLocation);
   };
 
   return (
