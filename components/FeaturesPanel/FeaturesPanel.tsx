@@ -20,11 +20,9 @@ export default function FeaturesPanel({ camper }: Props) {
               as="li"
               className={styles.detailsChip}
             />
-          ) : null
+          ) : null,
         )}
       </ul>
-
-      <h3 className={styles.detailsTitle}>Vehicle details</h3>
 
       {/* Details */}
       <h3 className={styles.detailsTitle}>Vehicle details</h3>

@@ -45,20 +45,19 @@
 }
 
 .details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 14px;
-  column-gap: 40px;
-}
-
-.details p:nth-child(even) {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .details p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 16px;
   line-height: 1.5;
   color: var(--main);
+  margin: 0;
 }
 
 .details strong {
